@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## How to run
 
-First, run the development server:
-
-```bash
+```
+nvm use
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+to test `npm run test`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Volvo Cars (Global Online Digital)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Front-end coding test (React)
 
-## Learn More
+Our team's designer has come up with a new design to show our latest and greatest recharge cars on the website.
 
-To learn more about Next.js, take a look at the following resources:
+Here is how the design look like for desktop and mobile (files are stored under `docs` folder)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Desktop
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![ProductListDesktop](./docs/ProductList-Desktop.png)
 
-## Deploy on Vercel
+### Mobile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![ProductListDesktop](./docs/ProductList-Mobile.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The data required to render the design is under `public/api/cars.json` folder. You need to fetch the data from the client side and render it in the browser. The data looks like this:
+
+```json
+[
+  {
+    "id": "xc90-recharge",
+    "modelName": "XC90 Recharge",
+    "bodyType": "suv",
+    "modelType": "plug-in hybrid",
+    "imageUrl": "/images/xc90_recharge.jpg"
+  }
+]
+```
+
+The product owner is telling you that you can generate the links to the learn and shop pages of each car by concatating the `id` of the car to the learn (`/learn/`) and shop (`/shop/`) urls.
+
+Two extra SVG icons are also provided by our designer which are stored under `docs` folder.
+
+## Requirements
+
+- The project is bootstraped using [Next.js](https://nextjs.org/).
+- Browser support is modern ever-green browsers.
+- Implement this design using React and Typescript.
+- Accessibility is important.
+- Code Structure and reusablity is important.
+
+## Bonus Points:
+
+- If you use our design system component library, [VCC-UI](https://vcc-ui.vercel.app/)
+- If you add a filter bar on the top to filter cars by `bodyType`
